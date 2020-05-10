@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:ordering_food/screens/Register.dart';
 
 
-import 'package:flutter/material.dart' ;
-import 'package:online_ordering_food/screens/register.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
