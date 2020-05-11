@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ordering_food/screens/Register.dart';
+import 'package:ordering_food/screens/login.dart';
+import 'login.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -42,7 +44,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               child:Row(
                               children: <Widget>[
                                 Expanded(child:  FlatButton(
-                                onPressed: (){},
+                                onPressed: (){
+                                  Navigator.push(
+                                  context, 
+                                  MaterialPageRoute(builder: (context)
+                                  {
+                                   return LoginPage();
+                                  }
+                                  ),);
+                                },
                                  child:Text('Log in'),
                                  splashColor: Colors.black,
                                  color:Colors.yellow,
