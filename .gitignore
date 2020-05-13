@@ -41,3 +41,9 @@ app.*.map.json
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+android/app/build.gradle
+android/app/build.gradle
+android/app/google-services (1).json
+android/app/build.gradle
+android/build.gradle
+pubspec.lock
