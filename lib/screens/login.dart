@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ordering_food/screens/Register.dart';
 class LoginPage extends StatefulWidget{
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -19,7 +20,7 @@ class _LoginPageState extends State<LoginPage>{
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.orange[500],
         title: Text('FOOD',
                     style:TextStyle(
                       fontFamily:'Lobster',
@@ -35,14 +36,7 @@ class _LoginPageState extends State<LoginPage>{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text(
-              '',
-              style: TextStyle(
-                fontSize: 50.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Pacifico"
-              ),
-            ),
+            
             SizedBox(height: 40.0,),
             Text(
               "LOGIN",
@@ -66,14 +60,26 @@ class _LoginPageState extends State<LoginPage>{
             SizedBox(height: 50.0),
             buildButtonContainer(),
             SizedBox(height: 10.0,),
-            Container(
+            Expanded(
               child: Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                 //   Text("Don't have an account?"),
+                    Text("Don't have an account?"),
                     SizedBox(width: 10.0,),
-                   // Text("SIGN UP", style: TextStyle(color: Theme.of(context).primaryColor,))
+                    Expanded(child: FlatButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)
+                        {
+                          return Register();
+                        }),);
+                      },
+                      child:Text('SIGN UP',
+                       style: TextStyle(
+                       color:  Colors.blue[400],),
+                    ),)
+                    //Text("SIGN UP", style: TextStyle(color: Theme.of(context).primaryColor,)
+                    )
                   ],
                 ),
               ),
