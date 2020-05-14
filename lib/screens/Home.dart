@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ordering_food/screens/Register.dart';
+import 'package:ordering_food/screens/register.dart';
 import 'package:ordering_food/screens/login.dart';
-import 'login.dart';
+//import 'login.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -49,13 +49,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   context, 
                                   MaterialPageRoute(builder: (context)
                                   {
-                                   return LoginPage();
+                                   return LoginScreen();
                                   }
                                   ),);
                                 },
                                  child:Text('Log in'),
                                  splashColor: Colors.black,
-                                 color:Colors.yellow,
+                                 color:Colors.orange,
                                  textColor: Colors.black,
                                  padding: EdgeInsets.only(right:20.0,left:20.0),
                               ),
@@ -67,14 +67,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                   context, 
                                   MaterialPageRoute(builder: (context)
                                   {
-                                   return Register();
+                                   return RegisterScreen();
                                   }
                                   ),
                                   );
                                 },
                                  child:Text('Sign up'),
                                  splashColor: Colors.black,
-                                 color:Colors.yellow,
+                                 color:Colors.orange,
                                  textColor: Colors.black,
                                  padding: EdgeInsets.only(right:20.0,left:20.0),
                               ),
