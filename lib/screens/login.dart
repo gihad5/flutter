@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ordering_food/screens/register.dart';
 import 'package:ordering_food/screens/homelogin.dart';
 class LoginScreen extends StatefulWidget{
@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
 
-  final _formkey = GlobalKey<FormState>();
+  /*final _formkey = GlobalKey<FormState>();
 
   TextEditingController _emailcontroller = TextEditingController();
 
@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordcontroller.dispose();
 
     super.dispose();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +50,11 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Container(
         padding: EdgeInsets.all(16),
         child: Form(
-            key: _formkey,
+         //   key: _formkey,
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  controller: _emailcontroller,
+               //   controller: _emailcontroller,
                   decoration: InputDecoration(
                     hintText: 'Email',
                   ),
@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextFormField(
                   obscureText: true,
-                  controller: _passwordcontroller,
+                 // controller: _passwordcontroller,
                   decoration: InputDecoration(
                     hintText: 'Password' ,
                   ),
@@ -87,7 +87,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text('Login',style: TextStyle(color: Colors.white),
                              ),
                   onPressed: () async {
-                    if(_formkey.currentState.validate()){
+                    Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeloginScreen()),
+                        );
+                  /*  if(_formkey.currentState.validate()){
 
                       var result = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
 
@@ -102,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       }else{
                         print('user not found');
                       }
-                    }
+                    }*/
                   },
                 ),
                 SizedBox(),
