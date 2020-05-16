@@ -1,17 +1,42 @@
 import 'package:flutter/material.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ordering_food/screens/login.dart';
-class Register extends StatefulWidget {
+
+
+class RegisterScreen extends StatefulWidget{
   @override
-  _RegisterState createState() => _RegisterState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _RegisterState extends State<Register> {
+class _RegisterScreenState extends State<RegisterScreen> {
+    void initState()
+  {
+    super.initState();
+  }
+
+
+  //final _formkey = GlobalKey<FormState>();
+
+  //TextEditingController _emailcontroller = TextEditingController();
+
+  //TextEditingController _passwordcontroller = TextEditingController();
+
+  @override
+  /*void dispose()
+  {
+    _emailcontroller.dispose();
+
+    _passwordcontroller.dispose();
+
+    super.dispose();
+  }*/
+
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.orange[500],
+         backgroundColor: Colors.orange[500],
         title: Text('FOOD',
                     style:TextStyle(
                       fontFamily:'Lobster',
@@ -21,160 +46,121 @@ class _RegisterState extends State<Register> {
                     ) ,
                     ),
       ),
-      body: Column(
-        
-        mainAxisAlignment:MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Text('WELCOME!',
-          style: TextStyle(
-            fontSize: 50,
-            
-          ),),
-          SizedBox(height: 10,),
-          TextField(
-            style: TextStyle(
-              fontSize:18,
-              color: Colors.black54,
-              ),
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.yellow[100],
-                hintText: 'username',
-                focusedBorder:OutlineInputBorder(
-                  borderSide:BorderSide(color: Colors.yellow[200]),
-                  borderRadius: BorderRadius.circular(15),
-                ) ,
-                enabledBorder: UnderlineInputBorder(
-                  borderSide:BorderSide(color: Colors.yellow[200]),
-                  borderRadius: BorderRadius.circular(15),
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: Form(
+          //  key: _formkey,
+            child: Column(
+              children: <Widget>[
+                TextFormField(
+                //  controller: _emailcontroller,
+                  decoration: InputDecoration(
+                    hintText: 'Email',
+                  ),
+                  validator: (value){
+                    if(value.isEmpty){
+                      return 'Please Fill Email Input';
+                    }
+                  },
                 ),
-              ),
-          ),
-          SizedBox(height: 10,),
-         TextField(
-           obscureText: true,
-            style: TextStyle(
-              fontSize:18,
-              color: Colors.black54,
-              ),
-              decoration: InputDecoration(
-        
-                filled: true,
-                fillColor: Colors.yellow[100],
-                hintText: 'Password',
-                focusedBorder:OutlineInputBorder(
-                  borderSide:BorderSide(color: Colors.yellow[200]),
-                  borderRadius: BorderRadius.circular(15),
-                ) ,
-                enabledBorder: UnderlineInputBorder(
-                  borderSide:BorderSide(color: Colors.yellow[200]),
-                  borderRadius: BorderRadius.circular(15),
+                
+                TextFormField(
+                  obscureText: true,
+                 // controller: _passwordcontroller,
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                  ),
+                  validator: (value){
+                    if(value.isEmpty){
+                      return 'Please Fill Password Input';
+                    }
+                  },
                 ),
-              ),
-          ),
-          SizedBox(height: 10,),
-           TextField(
-            style: TextStyle(
-              fontSize:18,
-              color: Colors.black54,
-              ),
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.yellow[100],
-                hintText: 'phone',
-                focusedBorder:OutlineInputBorder(
-                  borderSide:BorderSide(color: Colors.yellow[200]),
-                  borderRadius: BorderRadius.circular(15),
-                ) ,
-                enabledBorder: UnderlineInputBorder(
-                  borderSide:BorderSide(color: Colors.yellow[200]),
-                  borderRadius: BorderRadius.circular(15),
+                 TextFormField(
+                  
+                  decoration: InputDecoration(
+                    hintText: 'username',
+                  ),
+                  validator: (value){
+                    if(value.isEmpty){
+                      return 'Please Fill Password Input';
+                    }
+                  },
                 ),
-              ),
-          ),
-          SizedBox(height: 10,),
-           TextField(
-            style: TextStyle(
-              fontSize:18,
-              color: Colors.black54,
-              ),
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.yellow[100],
-                hintText: 'gmail',
-                focusedBorder:OutlineInputBorder(
-                  borderSide:BorderSide(color: Colors.yellow[200]),
-                  borderRadius: BorderRadius.circular(10),
-                ) ,
-                enabledBorder: UnderlineInputBorder(
-                  borderSide:BorderSide(color: Colors.yellow[200]),
-                  borderRadius: BorderRadius.circular(5),
+                 TextFormField(
+                  
+                  decoration: InputDecoration(
+                    hintText: 'Phone',
+                  ),
+                  validator: (value){
+                    if(value.isEmpty){
+                      return 'Please Fill Password Input';
+                    }
+                  },
                 ),
-              ),
-          ),
-         SizedBox(height: 50.0),
-            buildButtonContainer(),
-            SizedBox(height: 1.0,),
+                SizedBox(
+                  height: 25,
+                ),
+                RaisedButton(
+                  color: Colors.orange,
+                  child: Text('Register New Account',style: TextStyle(color: Colors.white),),
+                  onPressed: () async{
+                     Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginScreen()),
+                        );
+                   // if(_formkey.currentState.validate()){
+                     // var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
+                    
+                    /*  if(result != null)
+                      {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginScreen()),
+                        );
+
+                       
+                      }else{
+                        print('please try later');
+                      }
+                    }*/
+                  },
+                ),
+                 SizedBox(),
             Expanded(
               child: Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("If have an account?"),
-                    SizedBox(width: 12.0,),
+                    Text("If you have an account?"),
+                    SizedBox(width: 10.0,),
                     Expanded(child: FlatButton(
                       onPressed: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)
                         {
-                          return LoginPage();
+                          return LoginScreen();
                         }),);
                       },
                       child:Text('Login',
                        style: TextStyle(
                        color:  Colors.blue[400],),
                     ),)
-                    //Text("SIGN UP", style: TextStyle(color: Theme.of(context).primaryColor,)
+                   
                     )
-],
+                  ],
                 ),
               ),
             ),
+               
 
-
-
-
-        ],
-      ),
-    );
-  }
-  Widget buildButtonContainer(){
-    return Container(
-      
-      height: 56.0,
-      
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(23.0),
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFFFB415B),
-            Color(0xFFEE5623)
-          ],
-          begin: Alignment.centerRight,
-          end: Alignment.centerLeft
-        ),
-      ),
-      child: Center(
-        child: Text(
-          "Sing Up",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18.0,
-          ),
+              ],
+            )
         ),
       ),
     );
-
   }
+
 }
+
+
+
