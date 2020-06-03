@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ordering_food/screens/register.dart';
-import 'package:ordering_food/screens/homelogin.dart';
+import 'package:ordering_food/screens/myapp.dart';
 class LoginScreen extends StatefulWidget{
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () async {
                     Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (context) => HomeloginScreen()),
+                          MaterialPageRoute(builder: (context) => App()),
                         );
                   /*  if(_formkey.currentState.validate()){
 
