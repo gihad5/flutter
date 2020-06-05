@@ -83,3 +83,18 @@ return Stack(
          Text(widget.price.toString(),style:TextStyle(fontWeight: FontWeight.bold,color: Colors.orangeAccent,))
        ]
      )
+       ],
+
+),
+     ),
+  ],
+);
+
+
+     
+
+  }
+
+
+}
+
