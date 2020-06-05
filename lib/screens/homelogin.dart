@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ordering_food/scoped_model/food_model.dart';
 import 'category.dart';
 import 'searchfield.dart';
 import 'food.dart';
@@ -7,20 +6,13 @@ import 'fooddata.dart';
 import 'foodmodel.dart';
 
  class HomeLoginScreen extends StatefulWidget {
-   final FoodModel foodModel;
-   HomeLoginScreen(this.foodModel);
-
+HomeLoginScreen();
     @override
     _HomeScreenState createState() => _HomeScreenState();
   }
   
   class _HomeScreenState extends State<HomeLoginScreen> {
-//List<Food> _foods=foods;
-@override
-void initState(){
-  widget.foodModel.fetchFoods();
-  super.initState();
-}
+List<Food> _foods=foods;
     final textStyle=TextStyle(fontSize: 30.0,fontWeight: FontWeight.bold,);
     @override
     Widget build(BuildContext context) {
@@ -48,9 +40,11 @@ void initState(){
             FoodCategory(),
             SearchField(),
             SizedBox(height:20.0,),
-            Column(children: widget.foodModel.foods.map(_buildFoodItems).toList(),
+            Column(children: _foods.map(_buildFoodItems).toList(),
+            
             
             )
+            
           ],
 
         ),
@@ -62,7 +56,7 @@ void initState(){
           id:food.id,
           name: food.name,
           category: food.category,
-         imagepath: ("assets/images/bur1.jpg"),
+         imagepath: food.imagepath,
           discount: food.discount,
           price: food.price,
           ratings: food.ratings,
