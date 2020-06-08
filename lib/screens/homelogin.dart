@@ -4,6 +4,7 @@ import 'searchfield.dart';
 import 'food.dart';
 import 'fooddata.dart';
 import 'foodmodel.dart';
+import 'login.dart';
 
  class HomeLoginScreen extends StatefulWidget {
 HomeLoginScreen();
@@ -17,6 +18,24 @@ List<Food> _foods=foods;
     @override
     Widget build(BuildContext context) {
       return Scaffold(
+
+
+appBar: AppBar(title: Text('Home'),
+backgroundColor: Colors.orange,
+       actions: <Widget>[
+          RaisedButton(
+            child: Text('Log Out',style: TextStyle(fontSize: 18,color: Colors.white),),
+            color: Colors.orange,
+            onPressed: () async{
+          //await FirebaseAuth.instance.signOut();
+Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+
+            }
+      ),
+       ],
+      ),
+
+
         body: ListView(
           padding: EdgeInsets.only(top:50.0,left:20.0,right:20.0),
           children :<Widget>[
