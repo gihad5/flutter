@@ -22,7 +22,7 @@ Widget build(BuildContext context){
     scrollDirection: Axis.vertical,
     children: <Widget>[
      OrderCart(),
-        OrderCart(),
+        //OrderCart(),
     
     ],
     ),
@@ -87,13 +87,13 @@ Widget _buildTotalContainer(){
               children: <Widget>[
                 Text("Sub Total",style: TextStyle(color:Colors.grey,fontSize:16.0,fontWeight:FontWeight.bold),),
               
-                Text("80.0",style: TextStyle(color:Colors.black,fontSize:16.0,fontWeight:FontWeight.bold),),
+                Text("78.0",style: TextStyle(color:Colors.black,fontSize:16.0,fontWeight:FontWeight.bold),),
            
 
               ],
             ),
             SizedBox(height:20.0),
-            Container(
+           /* Container(
               width: MediaQuery.of(context).size.width,
               height: 50.0,
               decoration: BoxDecoration(
@@ -104,7 +104,7 @@ Widget _buildTotalContainer(){
               child: Center(
                 child: Text("Check Out",style: TextStyle(fontSize:18.0,color:Colors.white,fontWeight:FontWeight.bold),),
               ),
-            ),
+            ),*/
             
           ],
 
