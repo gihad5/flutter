@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'details.dart';
 
 class BoughtFoods extends StatefulWidget{
 final String id;
@@ -77,12 +78,29 @@ return Stack(
      ],
      ),
      
+     
      Column(
         
        children: <Widget>[
          Text(widget.price.toString(),style:TextStyle(fontWeight: FontWeight.bold,color: Colors.orangeAccent,))
        ]
-     )
+     ),
+     Spacer(),
+     Column(
+        
+       children: <Widget>[
+         InkWell(
+                onTap: () async {
+                    Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) =>   Details ()),
+                        );
+                  },
+                  child:
+         Text("Details",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.red,))
+         ),
+       ]
+     ),
        ],
 
 ),
