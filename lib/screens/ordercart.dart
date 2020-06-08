@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'details.dart';
 class OrderCart extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -21,12 +22,19 @@ class OrderCart extends StatelessWidget{
                 onTap: (){},
                 child:
              Icon(Icons.keyboard_arrow_up,color: Color(0xFFD3D3D3),)),
-             Text("0",style: TextStyle(fontSize:18.0,color: Color(0xFFD3D3D3)),),
+             Text("1",style: TextStyle(fontSize:18.0,color: Color(0xFFD3D3D3)),),
              InkWell(
                 onTap: (){},
                 child:
              Icon(Icons.keyboard_arrow_down,color: Color(0xFFD3D3D3),),
              ),
+             
+             
+           
+               
+          
+             
+            
            ]
          ),
        ),
@@ -36,7 +44,7 @@ class OrderCart extends StatelessWidget{
          width: 70.0,
          decoration:BoxDecoration(
            image: DecorationImage(
-             image: AssetImage("assets/images/bur1.jpg"),
+             image: AssetImage("bur1.jpg"),
              fit: BoxFit.cover,
              
 
@@ -69,16 +77,21 @@ class OrderCart extends StatelessWidget{
               scrollDirection: Axis.horizontal,
               children: <Widget>[
               
-                 Container(
+                Container(
                   margin: EdgeInsets.only(right: 10.0),
                   child:Row(
                     children:<Widget>[
-                Text("chicken",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+                Text("",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
                 SizedBox(width:5.0,),
                 InkWell(
-                onTap: (){},
+                onTap: () async {
+                    Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) =>  Details ()),
+                        );
+                  },
                   child:
-                Text("x",
+                Text("Details",
                 style: TextStyle(
                   color: Colors.red,
                   fontWeight: FontWeight.bold
