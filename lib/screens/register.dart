@@ -105,10 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   color: Colors.orange,
                   child: Text('Register New Account',style: TextStyle(color: Colors.white),),
                   onPressed: () async{
-                     Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginScreen()),
-                        );
+                    
                     if(_formkey.currentState.validate()){
                       var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
                     
