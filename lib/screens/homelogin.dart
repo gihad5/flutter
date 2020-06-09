@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'category.dart';
 import 'searchfield.dart';
 import 'food.dart';
@@ -27,7 +28,7 @@ backgroundColor: Colors.orange,
             child: Text('Log Out',style: TextStyle(fontSize: 18,color: Colors.white),),
             color: Colors.orange,
             onPressed: () async{
-          //await FirebaseAuth.instance.signOut();
+          await FirebaseAuth.instance.signOut();
 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
 
             }
