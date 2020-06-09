@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ordering_food/screens/login.dart';
 
 
@@ -15,21 +15,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
 
-  //final _formkey = GlobalKey<FormState>();
+  final _formkey = GlobalKey<FormState>();
 
-  //TextEditingController _emailcontroller = TextEditingController();
+  TextEditingController _emailcontroller = TextEditingController();
 
-  //TextEditingController _passwordcontroller = TextEditingController();
+  TextEditingController _passwordcontroller = TextEditingController();
 
   @override
-  /*void dispose()
+  void dispose()
   {
     _emailcontroller.dispose();
 
     _passwordcontroller.dispose();
 
     super.dispose();
-  }*/
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,11 +49,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Container(
         padding: EdgeInsets.all(16),
         child: Form(
-          //  key: _formkey,
+           key: _formkey,
             child: Column(
               children: <Widget>[
                 TextFormField(
-                //  controller: _emailcontroller,
+                 controller: _emailcontroller,
                   decoration: InputDecoration(
                     hintText: 'Email',
                   ),
@@ -66,7 +66,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 
                 TextFormField(
                   obscureText: true,
-                 // controller: _passwordcontroller,
+                 controller: _passwordcontroller,
                   decoration: InputDecoration(
                     hintText: 'Password',
                   ),
@@ -109,10 +109,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           context,
                           MaterialPageRoute(builder: (context) => LoginScreen()),
                         );
-                   // if(_formkey.currentState.validate()){
-                     // var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
+                    if(_formkey.currentState.validate()){
+                      var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
                     
-                    /*  if(result != null)
+                      if(result != null)
                       {
                         Navigator.pushReplacement(
                           context,
@@ -123,7 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       }else{
                         print('please try later');
                       }
-                    }*/
+                    }
                   },
                 ),
                  SizedBox(),
@@ -161,6 +161,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
 }
+
+
 
 
 
