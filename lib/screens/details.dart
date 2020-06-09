@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ordering_food/screens/chief.dart';
 import 'package:ordering_food/screens/orderpage.dart';
 import 'myapp.dart';
 
@@ -84,7 +85,20 @@ Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => App()
             RaisedButton(
                   
                   color: Colors.orange,
-                  child: Text('Add to card',style: TextStyle(color: Colors.white),
+                  child: Text('Cheif Cooking It',style: TextStyle(color: Colors.white),
+                             ),
+                  onPressed: () async {
+                    Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => Chief()),
+                        );
+                  },
+                ),
+                SizedBox(height:30.0),
+            RaisedButton(
+                  
+                  color: Colors.orange,
+                  child: Text('Add To Cart',style: TextStyle(color: Colors.white),
                              ),
                   onPressed: () async {
                     Navigator.pushReplacement(
@@ -93,6 +107,7 @@ Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => App()
                         );
                   },
                 ),
+    
     
   
             
